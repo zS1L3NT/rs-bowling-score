@@ -13,11 +13,11 @@ Bowling is one of the rare sports that I enjoy playing. I have always taken inte
 
 - Calculate bowling scores after every throw
 - Error handling for Invalid input
-  - Handles invalid pin count for multiple throws
+  - Handles invalid pin count for multiple throws<br>
     ![Error 1](https://i.ibb.co/5LLGpy0/bowling-error-1.png)
-  - Handles invalid pin count for first throw
+  - Handles invalid pin count for first throw<br>
     ![Error 2](https://i.ibb.co/34fkG4b/bowling-error-2.png)
-  - Handles non-number errors
+  - Handles non-number errors<br>
     ![Error 3](https://i.ibb.co/ChQVhMj/bowling-error-3.png)
 
 ## Usage
