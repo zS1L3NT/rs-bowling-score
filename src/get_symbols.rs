@@ -15,24 +15,20 @@ pub fn get_symbols(frames: &Vec<Vec<u32>>) -> Vec<[String; 3]> {
                         if throws.get(2).is_some() {
                             if throws[2] == 10 {
                                 symbols[2] = String::from("X");
-                            }
-                            else {
+                            } else {
                                 symbols[2] = handle_digit(throws[2]);
                             }
                         }
-                    }
-                    else {
+                    } else {
                         handle_non_strike(&mut symbols, throws, 1);
                     }
                 }
-            }
-            else {
+            } else {
                 let scored_ten = handle_non_strike(&mut symbols, throws, 0);
                 if throws.get(2).is_some() && scored_ten {
                     if throws[2] == 10 {
                         symbols[2] = String::from("X");
-                    }
-                    else {
+                    } else {
                         symbols[2] = handle_digit(throws[2]);
                     }
                 }
@@ -64,6 +60,6 @@ fn handle_digit(digit: u32) -> String {
     match digit {
         0 => String::from("-"),
         10 => String::from("X"),
-        _ => digit.to_string()
+        _ => digit.to_string(),
     }
 }

@@ -6,7 +6,7 @@ pub fn get_subtotal(frames: &Vec<Vec<u32>>) -> Vec<u32> {
 
         let previous_frame = match i {
             0 => 0,
-            i => subtotals[i - 1]
+            i => subtotals[i - 1],
         };
 
         let current_frame = if i != 9 {

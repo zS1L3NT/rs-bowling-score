@@ -1,16 +1,16 @@
 #[macro_use]
 extern crate prettytable;
 
-use std::io::{stdin, Write};
 use std::io::stdout;
+use std::io::{stdin, Write};
 
 use prettytable::{Row, Table};
 
-use get_symbols::get_symbols;
 use get_subtotal::get_subtotal;
+use get_symbols::get_symbols;
 
-mod get_symbols;
 mod get_subtotal;
+mod get_symbols;
 
 fn main() {
     let mut frames: Vec<Vec<u32>> = Vec::new();
@@ -26,7 +26,10 @@ fn main() {
         loop {
             let frame = &mut frames[frame_num - 1];
 
-            let input = request_input(&*format!("Enter score for frame {0} throw {1}: ", frame_num, throw_num));
+            let input = request_input(&*format!(
+                "Enter score for frame {0} throw {1}: ",
+                frame_num, throw_num
+            ));
 
             match input.trim().parse::<u32>() {
                 Ok(throw) => {
@@ -71,7 +74,7 @@ fn main() {
 
                     draw_table(&frames);
                 }
-                Err(_) => println!("Throw must be a number!")
+                Err(_) => println!("Throw must be a number!"),
             }
         }
 
@@ -117,12 +120,8 @@ fn draw_table(frames: &Vec<Vec<u32>>) {
 
 fn request_input(message: &str) -> String {
     print!("{}", message);
-    stdout()
-        .flush()
-        .expect("Failed to flush input");
+    stdout().flush().expect("Failed to flush input");
     let mut input = String::new();
-    stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
+    stdin().read_line(&mut input).expect("Failed to read input");
     input
 }
