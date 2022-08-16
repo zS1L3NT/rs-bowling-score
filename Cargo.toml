@@ -1,5 +1,5 @@
 [package]
-name = "ts-bowling-score"
+name = "rs-bowling-score"
 version = "0.0.0"
 
 [dependencies]
